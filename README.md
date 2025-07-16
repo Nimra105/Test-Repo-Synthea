@@ -14,3 +14,21 @@ The model used for the embedding and LLM should be open-source and be able to ru
 
 ## Notes
 This project currently uses `numpy<2` to avoid compatibility issues when compiling dependencies like Faiss.
+
+## Troubleshooting
+
+Running the notebook may fail when importing **faiss** with an error similar to:
+
+```
+ImportError: numpy.core.multiarray failed to import
+```
+
+This happens if Faiss was built without a matching NumPy installation. To fix it,
+ensure NumPy is installed before Faiss. On Python 3.12 the easiest approach is:
+
+```bash
+pip install "numpy<2" faiss-cpu
+```
+
+Using the prebuilt `faiss-cpu` wheel avoids the need to compile Faiss from
+source and resolves the import error.
