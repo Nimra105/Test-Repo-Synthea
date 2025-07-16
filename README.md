@@ -11,3 +11,6 @@ The software should do the following:
 -) All diagnosis, decision, etc. made by the LLM should be presented to the user in a form, that allows for direct checking of the information and the sources used by the LLM
 
 The model used for the embedding and LLM should be open-source and be able to run on the Google Colab Platform directly. The specs are: A100 GPU, having 83.5GB of System-RAM, 40GB of GPU-RAM, and 180GB of storage.
+
+## Notes
+This project currently uses `numpy<2` to avoid compatibility issues when compiling dependencies like Faiss.
